@@ -38,6 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`listening for server at ${PORT}`));
-});
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(PORT, () => console.log(`listening for server at ${PORT}`));
+// });
+
+require('./db').sync()
+  .then(() => app.listen(PORT, () => console.log(`listening for server on ${PORT}`)))
+  .catch(err => console.log(err))
