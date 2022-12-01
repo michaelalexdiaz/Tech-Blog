@@ -5,28 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
 </head>
 
-<body class="flex-col min-h-screen">
-  <nav class="w-full fixed">
-    <ul class="flex-wrap grid-rows-3">
-      <li class="inline m-0 mr-0.5"><a href="/">Home</a></li>
-      <li class="inline m-0 mr-0.5"><a href="/dashboard">Dashboard</a></li>
-      <li class="inline m-0 mr-0.5"><a href="#" id="logout-link">Logout</a></li>
+<body class="bg-green-600 flex-wrap auto-cols-auto min-h-screen">
+  <nav class="border-solid pb-4 bg-green-200 border-black rounded border-4 w-full relative">
+    <ul class="flex-wrap pt-4 grid-rows-3">
+      <li class="inline mr-2 p-2"><a href="/">Home</a></li>
+      <li class="inline mr-2 p-2"><a href="/dashboard">Dashboard</a></li>
+      <li class="inline mr-2 p-2"><a href="#" id="logout-link">Logout</a></li>
     </ul>
   </nav>
-  <header>
-    <h1><a href="/dashboard">Your Dashboard</a></h1>
-  </header class="p-1.5">
+  <header  class=" mt-4 z-0 absolue">
+    <h1 class="shadow-lg inline-flex ml-4 bg-green-200 p-2 border-solid border-black rounded text-xl border-4"><a href="/dashboard">Your Dashboard</a></h1>
+  </header>
 
-  <main class="auto-cols-auto">
+  <main class="auto-cols-auto content-center">
     {{{body}}}
   </main>
 
-  <footer class="inline-block p-1 mb-0.5">
+  <footer class="ml-4 inline-block p-1 mt-64 relative">
     <a href="/dashboard/new">➕ New Post</a>
   </footer>
 </body>

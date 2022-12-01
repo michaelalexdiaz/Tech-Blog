@@ -1,19 +1,19 @@
-<div class="post mb-0.5 rounded border-4 border-solid">
-  <div class="p-0.5 rounded border-solid border-4">
+<div class="mb-0.5 mt-10 rounded border-4 p-4 border-solid border-black bg-blue-400 inline-grid content-center text-center ml-64">
+  <div class="p-0.5 rounded border-solid border-black border-4 text-center content-center bg-green-200">
     <h2>Edit Post</h2>
   </div>
   <form id="edit-post-form" class="p-1">
     <input type="hidden" name="post-id" value="{{post.id}}" />
 
-    <label class="form-label" for="post-title">Title</label>
-    <input type="text" name="post-title" value="{{post.title}}" class="form-input" />
+    <label class="inline-grid" for="post-title">Title</label>
+    <input type="text" name="post-title" value="{{post.title}}" class="inline-grid" />
 
-    <label class="form-label" for="post-body">Content</label>
-    <textarea name="post-body" class="form-input">{{post.body}}</textarea>
+    <label class="inline-grid" for="post-body">Content</label>
+    <textarea name="post-body" class="inline-grid">{{post.body}}</textarea>
 
-    <button type="submit" class="btn">Update</button>
+    <button type="submit" class="btn border-solid border-2 border-black rounded p-1 bg-green-200">Update</button>
 
-    <button type="button" id="delete-btn" class="btn">Delete</button>
+    <button type="button" id="delete-btn" class="btn border-solid border-2 border-black rounded p-1 bg-green-200">Delete</button>
   </form>
 </div>
 
