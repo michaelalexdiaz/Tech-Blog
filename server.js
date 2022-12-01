@@ -13,7 +13,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 1000,
+    maxAge: 300000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -33,11 +33,12 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}!`);
+  sequelize.sync({ force: false });
 });
