@@ -12,7 +12,10 @@ if (process.env.JAWSDB_URL) {
       process.env.DB_USER,
       process.env.DB_PASSWORD,
       {
-          host: 'localhost',
+          host: 'us-cdbr-east-06.cleardb.net',
+          user: 'b18e798fe37795:c673a991',
+          password: '',
+          db: 'heroku_238b3bc805c82c6',
           dialect: 'mysql',
           port: 3306
       }
