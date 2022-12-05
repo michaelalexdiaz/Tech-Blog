@@ -3,7 +3,7 @@ const { Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-  try {
+
     const postData = await Post.findAll({
       where: {
         userId: req.session.userId,
@@ -16,9 +16,6 @@ router.get('/', withAuth, async (req, res) => {
       layout: 'dashboard',
       posts,
     });
-  } catch (err) {
-    res.redirect('login');
-  }
 });
 
 router.get('/new', withAuth, (req, res) => {
@@ -28,7 +25,7 @@ router.get('/new', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, async (req, res) => {
-  try {
+
     const postData = await Post.findByPk(req.params.id);
 
     if (postData) {
@@ -41,9 +38,6 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     } else {
       res.status(404).end();
     }
-  } catch (err) {
-    res.redirect('login');
-  }
 });
 
 module.exports = router;
